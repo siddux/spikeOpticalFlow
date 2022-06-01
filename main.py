@@ -23,11 +23,11 @@ from torch.utils.data import Dataset, DataLoader
 
 model_names = sorted(name for name in models.__dict__
                      if name.islower() and not name.startswith("__"))
-parser = argparse.ArgumentParser(description='Spike-FlowNet Training on several datasets',
+parser = argparse.ArgumentParser(description='Spike Optical Flow Training on several datasets',
                                  formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 parser.add_argument('--data', type=str, metavar='DIR', default='./datasets',
                     help='path to dataset')
-parser.add_argument('--savedir', type=str, metavar='DATASET', default='spikeflownet',
+parser.add_argument('--savedir', type=str, metavar='DATASET', default='spikeopticalflow',
                     help='results save dir')
 parser.add_argument('--arch', '-a', metavar='ARCH', default='spike_flownets',
                     choices=model_names,
@@ -80,14 +80,13 @@ args = parser.parse_args()
 #Initializations
 best_EPE = -1
 n_iter = 0
-#device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 device = torch.device("cpu")
 image_resize = 256
 event_interval = 0
 spiking_ts = 1
 sp_threshold = 0
 
-trainenv = 'indoor_flying1' #'outdoor_day2'
+trainenv = 'outdoor_day2'
 testenv = 'indoor_flying1'
 
 traindir = os.path.join(args.data, trainenv)
