@@ -17,8 +17,7 @@ Activate the conda environment:
 
 ## Dataset
 
-The datasets used for train and test this neural network are large so they can't be uploaded to this repository. As soon as possible they will be uploaded to Google Drive and the links will be available on the remote version of this repo [siddux/spikeOpticalFlow](https://github.com/siddux/spikeOpticalFlow).
-
+Download [datasets folder](https://drive.google.com/drive/folders/1IcPmrGrK4v4RlJ2uGWwtX6huM6r7lGvg?usp=sharing) and include in this directory
 
 ## Training
 
